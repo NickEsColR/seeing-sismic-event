@@ -39,6 +39,8 @@ namespace seeing_sismic_event
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnShow = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnFilter = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // gMapControl1
@@ -142,7 +144,7 @@ namespace seeing_sismic_event
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(12, 226);
+            this.btnDelete.Location = new System.Drawing.Point(239, 439);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 9;
@@ -150,11 +152,30 @@ namespace seeing_sismic_event
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // btnFilter
+            // 
+            this.btnFilter.Location = new System.Drawing.Point(12, 30);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(75, 23);
+            this.btnFilter.TabIndex = 10;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(96, 32);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 517);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.btnAdd);
@@ -184,6 +205,8 @@ namespace seeing_sismic_event
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnShow;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
