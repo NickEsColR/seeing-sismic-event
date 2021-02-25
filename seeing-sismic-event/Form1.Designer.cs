@@ -197,7 +197,6 @@ namespace seeing_sismic_event
             this.table.RowTemplate.Height = 24;
             this.table.Size = new System.Drawing.Size(929, 150);
             this.table.TabIndex = 11;
-            this.table.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Fecha
             // 
