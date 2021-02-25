@@ -40,7 +40,7 @@ namespace seeing_sismic_event
             this.btnShow = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnFilter = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbbFilter = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // gMapControl1
@@ -160,21 +160,27 @@ namespace seeing_sismic_event
             this.btnFilter.TabIndex = 10;
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
-            // comboBox1
+            // cbbFilter
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(96, 32);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 11;
+            this.cbbFilter.FormattingEnabled = true;
+            this.cbbFilter.Items.AddRange(new object[] {
+            "Magnitud menores a 4.5",
+            "Magnitudes entre 4.5 y 5",
+            "Magnitudes entre 5 y 6",
+            "Magnitudes de 6 en adelante"});
+            this.cbbFilter.Location = new System.Drawing.Point(96, 32);
+            this.cbbFilter.Name = "cbbFilter";
+            this.cbbFilter.Size = new System.Drawing.Size(121, 21);
+            this.cbbFilter.TabIndex = 11;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 517);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbbFilter);
             this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnShow);
@@ -187,7 +193,7 @@ namespace seeing_sismic_event
             this.Controls.Add(this.txtLatitude);
             this.Controls.Add(this.gMapControl1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "sismic event";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,7 +212,7 @@ namespace seeing_sismic_event
         private System.Windows.Forms.Button btnShow;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnFilter;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbbFilter;
     }
 }
 

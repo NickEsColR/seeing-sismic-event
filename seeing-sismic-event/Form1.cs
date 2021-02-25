@@ -91,5 +91,64 @@ namespace seeing_sismic_event
             polygons.Clear();
             shapes.Clear();
         }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            int pos = cbbFilter.SelectedIndex;
+            double mag = 0;
+            PointLatLng p = new PointLatLng();
+            List<String> data = new List<String>(); //cambiar por la lista del modelo
+            foreach (String n in data)
+            {
+                string[] row = n.Split(' ');
+                mag = double.Parse(row[4]);
+                switch(pos)
+                {
+                case 0:
+                        if (mag < 4.5)
+                        {
+                            double lat = double.Parse(row[2]);
+                            double lng = double.Parse(row[3]);
+                            p = new PointLatLng(lat, lng);
+                            points.Add(p);
+                    }
+                    MessageBox.Show("0");
+                break;
+                case 1:
+                    if(mag >= 4.5 && mag < 5)
+                    {
+                            double lat = double.Parse(row[2]);
+                            double lng = double.Parse(row[3]);
+                            p = new PointLatLng(lat, lng);
+                            points.Add(p);
+                        }
+                    MessageBox.Show("1");
+                    break;
+                case 2:
+                    if(mag >= 5 && mag <= 6)
+                    {
+                            double lat = double.Parse(row[2]);
+                            double lng = double.Parse(row[3]);
+                            p = new PointLatLng(lat, lng);
+                            points.Add(p);
+                        }
+                    MessageBox.Show("2");
+                    break;
+                case 3:
+                    if(mag > 6)
+                    {
+                            double lat = double.Parse(row[2]);
+                            double lng = double.Parse(row[3]);
+                            p = new PointLatLng(lat, lng);
+                            points.Add(p);
+                        }
+                    MessageBox.Show("3");
+                    break;
+                 }
+            }
+            setMarkers();
+            points.Clear();
+        }
+
     }
 }
