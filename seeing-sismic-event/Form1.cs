@@ -11,6 +11,7 @@ using GMap.NET;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.MapProviders;
+using System.IO;
 
 namespace seeing_sismic_event
 {
@@ -91,5 +92,44 @@ namespace seeing_sismic_event
             polygons.Clear();
             shapes.Clear();
         }
+
+        private void btnSearchDataBase(object sender, EventArgs e)
+        {
+
+            OpenFileDialog buscar = new OpenFileDialog();
+            if (buscar.ShowDialog() == DialogResult.OK)
+            {
+                searchDataBase.Text = buscar.FileName;
+            }
+            String[] lines;
+            lines = File.ReadAllLines(searchDataBase.Text);
+
+            for (int i = 0; i < lines.Length; i++)
+            {
+                String[] values = lines[i].Split(' ');
+
+                int n = table.Rows.Add();
+
+                table.Rows[n].Cells[0].Value = values[0];
+                table.Rows[n].Cells[1].Value = values[1];
+                table.Rows[n].Cells[2].Value = values[2];
+                table.Rows[n].Cells[3].Value = values[3];
+                table.Rows[n].Cells[4].Value = values[4];
+                table.Rows[n].Cells[5].Value = values[5];
+
+                string localidad = "";
+
+                for (int k = 6; k < values.Length; k++)
+                {
+                    localidad = localidad + " " + values[k];
+                }
+
+                table.Rows[n].Cells[6].Value = localidad;
+
+            }
+
+
+        }
+
     }
 }
