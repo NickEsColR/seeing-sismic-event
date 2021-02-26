@@ -17,6 +17,7 @@ namespace seeing_sismic_event
         private List<String> magProf; //magnitud y profundidad para el filtro
         private List<PointLatLng> points;
         private List<PointLatLng> shapes;
+        private String[] lines;
         GMapOverlay markers = new GMapOverlay("markers");
         GMapOverlay polygons = new GMapOverlay("polygond");
 
@@ -104,7 +105,6 @@ namespace seeing_sismic_event
             {
                 searchDataBase.Text = buscar.FileName;
             }
-            String[] lines;
             lines = File.ReadAllLines(searchDataBase.Text);
             
             for (int i = 0; i < lines.Length; i++)
@@ -189,6 +189,128 @@ namespace seeing_sismic_event
             }
             setMarkers();
             points.Clear();
+        }
+
+        private void btnFilterLocalidad_Click(object sender, EventArgs e)
+        {
+
+            table.Rows.Clear();
+
+            for (int i = 0; i < lines.Length; i++)
+            {
+                String[] values = lines[i].Split(' ');
+
+                String localidad = "";
+
+                for (int k = 6; k < values.Length; k++)
+                {
+                    localidad = localidad + " " + values[k];
+                }
+
+                String localidadSelected = txtLocalidadF.Text;
+
+                if (localidad.Contains(localidadSelected))
+                {
+                    data.Add(lines[i]);
+                    int n = table.Rows.Add();
+
+                    table.Rows[n].Cells[0].Value = values[0];
+                    table.Rows[n].Cells[1].Value = values[1];
+                    table.Rows[n].Cells[2].Value = values[2];
+                    table.Rows[n].Cells[3].Value = values[3];
+                    table.Rows[n].Cells[4].Value = values[4];
+                    table.Rows[n].Cells[5].Value = values[5];
+                    table.Rows[n].Cells[6].Value = localidad;
+
+                }
+
+                
+
+            }
+
+
+
+        }
+
+        private void btnHoraF_Click(object sender, EventArgs e)
+        {
+            table.Rows.Clear();
+
+            for (int i = 0; i < lines.Length; i++)
+            {
+                String[] values = lines[i].Split(' ');
+
+
+                String hourSelected = txtHoraF.Text;
+
+                String[] hourCurrent = values[1].Split(':');
+
+
+                if (hourCurrent[0].Equals(hourSelected))
+                {
+                    data.Add(lines[i]);
+                    int n = table.Rows.Add();
+                    String localidad = "";
+
+                    for (int k = 6; k < values.Length; k++)
+                    {
+                        localidad = localidad + " " + values[k];
+                    }
+
+                    table.Rows[n].Cells[0].Value = values[0];
+                    table.Rows[n].Cells[1].Value = values[1];
+                    table.Rows[n].Cells[2].Value = values[2];
+                    table.Rows[n].Cells[3].Value = values[3];
+                    table.Rows[n].Cells[4].Value = values[4];
+                    table.Rows[n].Cells[5].Value = values[5];
+                    table.Rows[n].Cells[6].Value = localidad;
+
+                }
+
+
+
+            }
+        }
+
+        private void btnMagnitud_Click(object sender, EventArgs e)
+        {
+
+            table.Rows.Clear();
+
+            for (int i = 0; i < lines.Length; i++)
+            {
+                String[] values = lines[i].Split(' ');
+
+
+                double magMin = double.Parse(txtMagMin.Text);
+                double magMax = double.Parse(txtMagMax.Text);
+                double magCurrent = double.Parse(values[4]);
+
+                if ( magMin<=magCurrent && magCurrent <= magMax )
+                {
+
+                        data.Add(lines[i]);
+                        int n = table.Rows.Add();
+                        String localidad = "";
+
+                        for (int k = 6; k < values.Length; k++)
+                        {
+                            localidad = localidad + " " + values[k];
+                        }
+
+                        table.Rows[n].Cells[0].Value = values[0];
+                        table.Rows[n].Cells[1].Value = values[1];
+                        table.Rows[n].Cells[2].Value = values[2];
+                        table.Rows[n].Cells[3].Value = values[3];
+                        table.Rows[n].Cells[4].Value = values[4];
+                        table.Rows[n].Cells[5].Value = values[5];
+                        table.Rows[n].Cells[6].Value = localidad;
+
+                }
+                
+
+            }
+
         }
     }
 }
