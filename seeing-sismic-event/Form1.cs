@@ -156,7 +156,7 @@ namespace seeing_sismic_event
                         }
                         break;
                     case 1:
-                        if (mag >= 4.5 && mag < 5)
+                        if ((mag >= 4.5) && (mag < 5))
                         {
                             double lat = double.Parse(row[2]);
                             double lng = double.Parse(row[3]);
@@ -166,7 +166,7 @@ namespace seeing_sismic_event
                         }
                         break;
                     case 2:
-                        if (mag >= 5 && mag <= 6)
+                        if ((mag >= 5) && (mag <= 6))
                         {
                             double lat = double.Parse(row[2]);
                             double lng = double.Parse(row[3]);
