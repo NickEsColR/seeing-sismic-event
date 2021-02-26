@@ -178,18 +178,23 @@ namespace seeing_sismic_event
                 if ((magnitudCurrent >= 3.0) &&( magnitudCurrent<4.0))
                 {
                     mag3++;
+                    MessageBox.Show("Magnitud 3");
                 }else if ((magnitudCurrent >= 4.0) && (magnitudCurrent < 5.0))
                 {
                     mag4++;
+                    MessageBox.Show("Magnitud 4");
                 }
                 else if ((magnitudCurrent >= 5.0) && (magnitudCurrent < 6.0))
                 {
                     mag5++;
+                    MessageBox.Show("Magnitud 5");
                 }
-                else
+                else if ((magnitudCurrent >= 6.0) && (magnitudCurrent < 7.0))
                 {
                     mag6++;
+                    MessageBox.Show("Magnitud 6");
                 }
+
 
             }
 
@@ -208,7 +213,6 @@ namespace seeing_sismic_event
                 serie.Points.Add(cantB[i]);
 
             }
-
 
             //pastel
 
