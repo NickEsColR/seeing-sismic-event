@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using GMap.NET;
 using GMap.NET.WindowsForms;
@@ -18,6 +13,8 @@ namespace seeing_sismic_event
     public partial class Form1: Form
     {
         //attributes
+        private List<String> data;
+        private List<String> magProf; //magnitud y profundidad para el filtro
         private List<PointLatLng> points;
         private List<PointLatLng> shapes;
         GMapOverlay markers = new GMapOverlay("markers");
@@ -28,6 +25,8 @@ namespace seeing_sismic_event
             InitializeComponent();
             points = new List<PointLatLng>();
             shapes = new List<PointLatLng>();
+            data = new List<string>();
+            magProf = new List<string>();
         }
 
         private void gMapControl1_Load(object sender, EventArgs e)
@@ -41,10 +40,14 @@ namespace seeing_sismic_event
 
         private void setMarkers()
         {
+            int numMagProf = 0; //posicion en lista magProf
             foreach(PointLatLng p in points)
             {
                 GMapMarker marker = new GMarkerGoogle(p, GMarkerGoogleType.red_dot);
+                String[] row = magProf[numMagProf].Split(' ');
+                marker.ToolTipText = "Mag: " + row[0] + "\n" + "Prof: " + row[1]+ "\n" + row[2]; 
                 markers.Markers.Add(marker);
+                numMagProf++;
             }
         }
 
@@ -103,11 +106,11 @@ namespace seeing_sismic_event
             }
             String[] lines;
             lines = File.ReadAllLines(searchDataBase.Text);
-
+            
             for (int i = 0; i < lines.Length; i++)
             {
                 String[] values = lines[i].Split(' ');
-
+                data.Add(lines[i]);
                 int n = table.Rows.Add();
 
                 table.Rows[n].Cells[0].Value = values[0];
@@ -131,5 +134,61 @@ namespace seeing_sismic_event
 
         }
 
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            int pos = cbbFilter.SelectedIndex;
+            double mag = 0;
+            PointLatLng p = new PointLatLng();
+            foreach (String n in data)
+            {
+                string[] row = n.Split(' ');
+                mag = double.Parse(row[4]);
+                switch (pos)
+                {
+                    case 0:
+                        if (mag < 4.5)
+                        {
+                            double lat = double.Parse(row[2]);
+                            double lng = double.Parse(row[3]);
+                            p = new PointLatLng(lat, lng);
+                            points.Add(p);
+                            magProf.Add(row[4] +" "+ row[5]+" " +row[6]);
+                        }
+                        break;
+                    case 1:
+                        if (mag >= 4.5 && mag < 5)
+                        {
+                            double lat = double.Parse(row[2]);
+                            double lng = double.Parse(row[3]);
+                            p = new PointLatLng(lat, lng);
+                            points.Add(p);
+                            magProf.Add(row[4] + " " + row[5] + " " + row[6]);
+                        }
+                        break;
+                    case 2:
+                        if (mag >= 5 && mag <= 6)
+                        {
+                            double lat = double.Parse(row[2]);
+                            double lng = double.Parse(row[3]);
+                            p = new PointLatLng(lat, lng);
+                            points.Add(p);
+                            magProf.Add(row[4] + " " + row[5] + " " + row[6]);
+                        }
+                        break;
+                    case 3:
+                        if (mag > 6)
+                        {
+                            double lat = double.Parse(row[2]);
+                            double lng = double.Parse(row[3]);
+                            p = new PointLatLng(lat, lng);
+                            points.Add(p);
+                            magProf.Add(row[4] + " " + row[5] + " " + row[6]);
+                        }
+                        break;
+                }
+            }
+            setMarkers();
+            points.Clear();
+        }
     }
 }
