@@ -29,6 +29,15 @@ namespace seeing_sismic_event
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.txtLatitude = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,7 +69,13 @@ namespace seeing_sismic_event
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtMagMax = new System.Windows.Forms.TextBox();
+            this.grfPuntos = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.grfBarras = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.grfPastel = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grfPuntos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grfBarras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grfPastel)).BeginInit();
             this.SuspendLayout();
             // 
             // gMapControl1
@@ -209,7 +224,7 @@ namespace seeing_sismic_event
             this.table.Name = "table";
             this.table.RowHeadersWidth = 51;
             this.table.RowTemplate.Height = 24;
-            this.table.Size = new System.Drawing.Size(807, 203);
+            this.table.Size = new System.Drawing.Size(807, 445);
             this.table.TabIndex = 11;
             // 
             // Fecha
@@ -288,7 +303,7 @@ namespace seeing_sismic_event
             // 
             // btnFilterLocalidad
             // 
-            this.btnFilterLocalidad.Location = new System.Drawing.Point(191, 562);
+            this.btnFilterLocalidad.Location = new System.Drawing.Point(192, 655);
             this.btnFilterLocalidad.Name = "btnFilterLocalidad";
             this.btnFilterLocalidad.Size = new System.Drawing.Size(88, 23);
             this.btnFilterLocalidad.TabIndex = 14;
@@ -298,7 +313,7 @@ namespace seeing_sismic_event
             // 
             // btnHoraF
             // 
-            this.btnHoraF.Location = new System.Drawing.Point(191, 610);
+            this.btnHoraF.Location = new System.Drawing.Point(191, 734);
             this.btnHoraF.Name = "btnHoraF";
             this.btnHoraF.Size = new System.Drawing.Size(88, 23);
             this.btnHoraF.TabIndex = 15;
@@ -308,14 +323,14 @@ namespace seeing_sismic_event
             // 
             // txtLocalidadF
             // 
-            this.txtLocalidadF.Location = new System.Drawing.Point(19, 563);
+            this.txtLocalidadF.Location = new System.Drawing.Point(19, 655);
             this.txtLocalidadF.Name = "txtLocalidadF";
             this.txtLocalidadF.Size = new System.Drawing.Size(120, 22);
             this.txtLocalidadF.TabIndex = 16;
             // 
             // txtHoraF
             // 
-            this.txtHoraF.Location = new System.Drawing.Point(19, 611);
+            this.txtHoraF.Location = new System.Drawing.Point(19, 734);
             this.txtHoraF.Name = "txtHoraF";
             this.txtHoraF.Size = new System.Drawing.Size(120, 22);
             this.txtHoraF.TabIndex = 17;
@@ -323,7 +338,7 @@ namespace seeing_sismic_event
             // Filters
             // 
             this.Filters.AutoSize = true;
-            this.Filters.Location = new System.Drawing.Point(111, 515);
+            this.Filters.Location = new System.Drawing.Point(126, 571);
             this.Filters.Name = "Filters";
             this.Filters.Size = new System.Drawing.Size(74, 17);
             this.Filters.TabIndex = 18;
@@ -331,7 +346,7 @@ namespace seeing_sismic_event
             // 
             // btnMagnitud
             // 
-            this.btnMagnitud.Location = new System.Drawing.Point(101, 715);
+            this.btnMagnitud.Location = new System.Drawing.Point(101, 916);
             this.btnMagnitud.Name = "btnMagnitud";
             this.btnMagnitud.Size = new System.Drawing.Size(99, 23);
             this.btnMagnitud.TabIndex = 19;
@@ -341,7 +356,7 @@ namespace seeing_sismic_event
             // 
             // txtMagMin
             // 
-            this.txtMagMin.Location = new System.Drawing.Point(58, 680);
+            this.txtMagMin.Location = new System.Drawing.Point(45, 863);
             this.txtMagMin.Name = "txtMagMin";
             this.txtMagMin.Size = new System.Drawing.Size(71, 22);
             this.txtMagMin.TabIndex = 20;
@@ -349,7 +364,7 @@ namespace seeing_sismic_event
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(65, 660);
+            this.label4.Location = new System.Drawing.Point(58, 830);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 17);
             this.label4.TabIndex = 21;
@@ -358,7 +373,7 @@ namespace seeing_sismic_event
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(178, 660);
+            this.label5.Location = new System.Drawing.Point(178, 830);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 17);
             this.label5.TabIndex = 23;
@@ -366,16 +381,69 @@ namespace seeing_sismic_event
             // 
             // txtMagMax
             // 
-            this.txtMagMax.Location = new System.Drawing.Point(171, 680);
+            this.txtMagMax.Location = new System.Drawing.Point(181, 863);
             this.txtMagMax.Name = "txtMagMax";
             this.txtMagMax.Size = new System.Drawing.Size(71, 22);
             this.txtMagMax.TabIndex = 22;
+            // 
+            // grfPuntos
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.grfPuntos.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.grfPuntos.Legends.Add(legend1);
+            this.grfPuntos.Location = new System.Drawing.Point(1153, 15);
+            this.grfPuntos.Name = "grfPuntos";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.grfPuntos.Series.Add(series1);
+            this.grfPuntos.Size = new System.Drawing.Size(519, 312);
+            this.grfPuntos.TabIndex = 24;
+            this.grfPuntos.Text = "chart1";
+            // 
+            // grfBarras
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.grfBarras.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.grfBarras.Legends.Add(legend2);
+            this.grfBarras.Location = new System.Drawing.Point(1153, 345);
+            this.grfBarras.Name = "grfBarras";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.grfBarras.Series.Add(series2);
+            this.grfBarras.Size = new System.Drawing.Size(519, 312);
+            this.grfBarras.TabIndex = 25;
+            this.grfBarras.Text = "chart2";
+            // 
+            // grfPastel
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.grfPastel.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.grfPastel.Legends.Add(legend3);
+            this.grfPastel.Location = new System.Drawing.Point(1153, 669);
+            this.grfPastel.Name = "grfPastel";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series3.Legend = "Legend1";
+            series3.Name = "Series2";
+            this.grfPastel.Series.Add(series3);
+            this.grfPastel.Size = new System.Drawing.Size(519, 312);
+            this.grfPastel.TabIndex = 26;
+            this.grfPastel.Text = "chart3";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1143, 750);
+            this.ClientSize = new System.Drawing.Size(1684, 993);
+            this.Controls.Add(this.grfPastel);
+            this.Controls.Add(this.grfBarras);
+            this.Controls.Add(this.grfPuntos);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtMagMax);
             this.Controls.Add(this.label4);
@@ -404,6 +472,9 @@ namespace seeing_sismic_event
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grfPuntos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grfBarras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grfPastel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -442,6 +513,9 @@ namespace seeing_sismic_event
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtMagMax;
+        private System.Windows.Forms.DataVisualization.Charting.Chart grfPuntos;
+        private System.Windows.Forms.DataVisualization.Charting.Chart grfBarras;
+        private System.Windows.Forms.DataVisualization.Charting.Chart grfPastel;
     }
 }
 

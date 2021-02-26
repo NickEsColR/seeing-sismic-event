@@ -7,6 +7,7 @@ using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.MapProviders;
 using System.IO;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace seeing_sismic_event
 {
@@ -100,6 +101,23 @@ namespace seeing_sismic_event
         private void btnSearchDataBase(object sender, EventArgs e)
         {
 
+            grfBarras.Series.Clear();
+            grfPuntos.Series.Clear();
+            String[] region = { "sureste", "noreste", "suroeste", "noroeste" };
+            grfPastel.Titles.Clear();
+
+            int sureste = 0;
+            int suroeste = 0;
+            int noroeste = 0;
+            int noreste = 0;
+
+            String[] magnitudes = { "3", "4", "5", "6" };
+            grfBarras.Titles.Clear();
+            int mag3 = 0;
+            int mag4 = 0;
+            int mag5 = 0;
+            int mag6 = 0;
+
             OpenFileDialog buscar = new OpenFileDialog();
             if (buscar.ShowDialog() == DialogResult.OK)
             {
@@ -107,6 +125,8 @@ namespace seeing_sismic_event
             }
             lines = File.ReadAllLines(searchDataBase.Text);
             
+            // table
+
             for (int i = 0; i < lines.Length; i++)
             {
                 String[] values = lines[i].Split(' ');
@@ -129,8 +149,76 @@ namespace seeing_sismic_event
 
                 table.Rows[n].Cells[6].Value = localidad;
 
+                //////////////////////////// grafico de barras conteo
+
+                double latitud = double.Parse(values[2]);
+                double logitud = double.Parse(values[3]);
+
+                if((latitud >= 0) && (logitud < 0))
+                {
+                    noroeste++;
+                }else if ((latitud < 0) && (logitud < 0))
+                {
+                    suroeste++;
+                }
+                else if ((latitud >= 0) && (logitud >= 0))
+                {
+                    noreste++;
+                }
+                else
+                {
+                    sureste++;
+                }
+
+                //////////////////////////// grafico de pastel conteo
+
+                double magnitudCurrent = double.Parse(values[4]);
+
+
+                if ((magnitudCurrent >= 3.0) &&( magnitudCurrent<4.0))
+                {
+                    mag3++;
+                }else if ((magnitudCurrent >= 4.0) && (magnitudCurrent < 5.0))
+                {
+                    mag4++;
+                }
+                else if ((magnitudCurrent >= 5.0) && (magnitudCurrent < 6.0))
+                {
+                    mag5++;
+                }
+                else
+                {
+                    mag6++;
+                }
+
             }
 
+            // graficas
+
+            //punto
+
+            //barras
+
+            int[] cantB = { noroeste, noreste, sureste, suroeste };
+            for (int i = 0; i < region.Length ; i++)
+            {
+                Series serie = grfBarras.Series.Add(region[i]);
+
+                serie.Label = cantB[i].ToString();
+                serie.Points.Add(cantB[i]);
+
+            }
+
+
+            //pastel
+
+            int[] cantP = { mag3, mag4, mag5, mag6 };
+
+
+            for (int i = 0; i < magnitudes.Length; i++)
+            {
+                grfPastel.Series["Series2"].Points.AddXY(magnitudes[i], cantP[i]);
+            }
 
         }
 
