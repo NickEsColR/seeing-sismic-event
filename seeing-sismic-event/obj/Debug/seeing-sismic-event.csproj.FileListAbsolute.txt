@@ -1,0 +1,26 @@
+D:\universidad\semestre 5\integrador 1\entre de gmaps\seeing-sismic-event\seeing-sismic-event\obj\Debug\seeing-sismic-event.csprojAssemblyReference.cache
+D:\universidad\semestre 5\integrador 1\entre de gmaps\seeing-sismic-event\seeing-sismic-event\obj\Debug\seeing_sismic_event.Form1.resources
+D:\universidad\semestre 5\integrador 1\entre de gmaps\seeing-sismic-event\seeing-sismic-event\obj\Debug\seeing_sismic_event.Properties.Resources.resources
+D:\universidad\semestre 5\integrador 1\entre de gmaps\seeing-sismic-event\seeing-sismic-event\obj\Debug\seeing-sismic-event.csproj.GenerateResource.cache
+D:\universidad\semestre 5\integrador 1\entre de gmaps\seeing-sismic-event\seeing-sismic-event\obj\Debug\seeing-sismic-event.csproj.CoreCompileInputs.cache
+D:\universidad\semestre 5\integrador 1\entre de gmaps\seeing-sismic-event\seeing-sismic-event\bin\Debug\seeing-sismic-event.exe.config
+D:\universidad\semestre 5\integrador 1\entre de gmaps\seeing-sismic-event\seeing-sismic-event\bin\Debug\seeing-sismic-event.exe
+D:\universidad\semestre 5\integrador 1\entre de gmaps\seeing-sismic-event\seeing-sismic-event\bin\Debug\seeing-sismic-event.pdb
+D:\universidad\semestre 5\integrador 1\entre de gmaps\seeing-sismic-event\seeing-sismic-event\bin\Debug\GMap.NET.Core.dll
+D:\universidad\semestre 5\integrador 1\entre de gmaps\seeing-sismic-event\seeing-sismic-event\bin\Debug\GMap.NET.WindowsForms.dll
+D:\universidad\semestre 5\integrador 1\entre de gmaps\seeing-sismic-event\seeing-sismic-event\obj\Debug\seeing-sismic-event.csproj.CopyComplete
+D:\universidad\semestre 5\integrador 1\entre de gmaps\seeing-sismic-event\seeing-sismic-event\obj\Debug\seeing-sismic-event.exe
+D:\universidad\semestre 5\integrador 1\entre de gmaps\seeing-sismic-event\seeing-sismic-event\obj\Debug\seeing-sismic-event.pdb
+E:\universidad\TEMP 5\PROYECTO INTEGRADOR\seeing-sismic-event\seeing-sismic-event\bin\Debug\seeing-sismic-event.exe.config
+E:\universidad\TEMP 5\PROYECTO INTEGRADOR\seeing-sismic-event\seeing-sismic-event\bin\Debug\seeing-sismic-event.exe
+E:\universidad\TEMP 5\PROYECTO INTEGRADOR\seeing-sismic-event\seeing-sismic-event\bin\Debug\seeing-sismic-event.pdb
+E:\universidad\TEMP 5\PROYECTO INTEGRADOR\seeing-sismic-event\seeing-sismic-event\bin\Debug\GMap.NET.Core.dll
+E:\universidad\TEMP 5\PROYECTO INTEGRADOR\seeing-sismic-event\seeing-sismic-event\bin\Debug\GMap.NET.WindowsForms.dll
+E:\universidad\TEMP 5\PROYECTO INTEGRADOR\seeing-sismic-event\seeing-sismic-event\obj\Debug\seeing-sismic-event.csprojAssemblyReference.cache
+E:\universidad\TEMP 5\PROYECTO INTEGRADOR\seeing-sismic-event\seeing-sismic-event\obj\Debug\seeing_sismic_event.Form1.resources
+E:\universidad\TEMP 5\PROYECTO INTEGRADOR\seeing-sismic-event\seeing-sismic-event\obj\Debug\seeing_sismic_event.Properties.Resources.resources
+E:\universidad\TEMP 5\PROYECTO INTEGRADOR\seeing-sismic-event\seeing-sismic-event\obj\Debug\seeing-sismic-event.csproj.GenerateResource.cache
+E:\universidad\TEMP 5\PROYECTO INTEGRADOR\seeing-sismic-event\seeing-sismic-event\obj\Debug\seeing-sismic-event.csproj.CoreCompileInputs.cache
+E:\universidad\TEMP 5\PROYECTO INTEGRADOR\seeing-sismic-event\seeing-sismic-event\obj\Debug\seeing-sismic-event.csproj.CopyComplete
+E:\universidad\TEMP 5\PROYECTO INTEGRADOR\seeing-sismic-event\seeing-sismic-event\obj\Debug\seeing-sismic-event.exe
+E:\universidad\TEMP 5\PROYECTO INTEGRADOR\seeing-sismic-event\seeing-sismic-event\obj\Debug\seeing-sismic-event.pdb
