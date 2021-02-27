@@ -102,7 +102,6 @@ namespace seeing_sismic_event
         {
 
             grfBarras.Series.Clear();
-            grfPuntos.Series.Clear();
             String[] region = { "sureste", "noreste", "suroeste", "noroeste" };
             grfPastel.Titles.Clear();
 
@@ -110,7 +109,6 @@ namespace seeing_sismic_event
             int suroeste = 0;
             int noroeste = 0;
             int noreste = 0;
-
             String[] magnitudes = { "3", "4", "5", "6" };
             grfBarras.Titles.Clear();
             int mag3 = 0;
@@ -124,7 +122,7 @@ namespace seeing_sismic_event
                 searchDataBase.Text = buscar.FileName;
             }
             lines = File.ReadAllLines(searchDataBase.Text);
-            
+
             // table
 
             for (int i = 0; i < lines.Length; i++)
@@ -154,10 +152,11 @@ namespace seeing_sismic_event
                 double latitud = double.Parse(values[2]);
                 double logitud = double.Parse(values[3]);
 
-                if((latitud >= 0) && (logitud < 0))
+                if ((latitud >= 0) && (logitud < 0))
                 {
                     noroeste++;
-                }else if ((latitud < 0) && (logitud < 0))
+                }
+                else if ((latitud < 0) && (logitud < 0))
                 {
                     suroeste++;
                 }
@@ -174,33 +173,37 @@ namespace seeing_sismic_event
 
                 double magnitudCurrent = double.Parse(values[4]);
 
-
-                if ((magnitudCurrent >= 3.0) &&( magnitudCurrent<4.0))
+                if ((magnitudCurrent >= 3.0) && (magnitudCurrent < 4.0))
                 {
                     mag3++;
-                    MessageBox.Show("Magnitud 3");
-                }else if ((magnitudCurrent >= 4.0) && (magnitudCurrent < 5.0))
+
+                }
+                else if ((magnitudCurrent >= 4.0) && (magnitudCurrent < 5.0))
                 {
                     mag4++;
-                    MessageBox.Show("Magnitud 4");
+
                 }
                 else if ((magnitudCurrent >= 5.0) && (magnitudCurrent < 6.0))
                 {
                     mag5++;
-                    MessageBox.Show("Magnitud 5");
+
                 }
                 else if ((magnitudCurrent >= 6.0) && (magnitudCurrent < 7.0))
                 {
                     mag6++;
-                    MessageBox.Show("Magnitud 6");
+
                 }
-
-
+                //grafica de puntos
+                double deep = double.Parse(values[5]);
+                grfPuntos.Series["Sismos"].Points.AddXY(magnitudCurrent, deep);
             }
+
 
             // graficas
 
             //punto
+            grfPuntos.Titles.Add("magnitud y profundidad");
+           
 
             //barras
 
@@ -211,8 +214,8 @@ namespace seeing_sismic_event
 
                 serie.Label = cantB[i].ToString();
                 serie.Points.Add(cantB[i]);
-
             }
+                grfBarras.Titles.Add("Distribucion por zona geografica");
 
             //pastel
 
@@ -223,6 +226,7 @@ namespace seeing_sismic_event
             {
                 grfPastel.Series["Series2"].Points.AddXY(magnitudes[i], cantP[i]);
             }
+                grfPastel.Titles.Add("distibucion de Magnitudes");
 
         }
 
@@ -403,6 +407,50 @@ namespace seeing_sismic_event
 
             }
 
+        }
+
+        private void btnFilterOptions_Click(object sender, EventArgs e)
+        {
+            int pos = cbbFilterOptions.SelectedIndex;
+            switch (pos)
+            {
+                case 0:
+                    cbbFilter.Visible = true;
+                    btnFilter.Visible = true;
+                    lblFilters.Visible = false;
+                    txtLocalidadF.Visible = false;
+                    btnFilterLocalidad.Visible = false;
+                    label4.Visible = false;
+                    label5.Visible = false;
+                    txtMagMin.Visible = false;
+                    txtMagMax.Visible = false;
+                    btnMagnitud.Visible = false;
+                    break;
+                case 1:
+                    lblFilters.Visible = true;
+                    txtLocalidadF.Visible = true;
+                    btnFilterLocalidad.Visible = true;
+                    cbbFilter.Visible = false;
+                    btnFilter.Visible = false;
+                    label4.Visible = false;
+                    label5.Visible = false;
+                    txtMagMin.Visible = false;
+                    txtMagMax.Visible = false;
+                    btnMagnitud.Visible = false;
+                    break;
+                case 2:
+                    label4.Visible = true;
+                    label5.Visible = true;
+                    txtMagMin.Visible = true;
+                    txtMagMax.Visible = true;
+                    btnMagnitud.Visible = true;
+                    lblFilters.Visible = true;
+                    txtLocalidadF.Visible = false;
+                    btnFilterLocalidad.Visible = false;
+                    cbbFilter.Visible = false;
+                    btnFilter.Visible = false;
+                    break;
+            }
         }
     }
 }

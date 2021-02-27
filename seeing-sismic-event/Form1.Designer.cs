@@ -63,7 +63,7 @@ namespace seeing_sismic_event
             this.btnHoraF = new System.Windows.Forms.Button();
             this.txtLocalidadF = new System.Windows.Forms.TextBox();
             this.txtHoraF = new System.Windows.Forms.TextBox();
-            this.Filters = new System.Windows.Forms.Label();
+            this.lblFilters = new System.Windows.Forms.Label();
             this.btnMagnitud = new System.Windows.Forms.Button();
             this.txtMagMin = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -72,6 +72,9 @@ namespace seeing_sismic_event
             this.grfPuntos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.grfBarras = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.grfPastel = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.cbbFilterOptions = new System.Windows.Forms.ComboBox();
+            this.btnFilterOptions = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grfPuntos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grfBarras)).BeginInit();
@@ -86,8 +89,7 @@ namespace seeing_sismic_event
             this.gMapControl1.GrayScaleMode = false;
             this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gMapControl1.LevelsKeepInMemmory = 5;
-            this.gMapControl1.Location = new System.Drawing.Point(319, 15);
-            this.gMapControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.gMapControl1.Location = new System.Drawing.Point(239, 12);
             this.gMapControl1.MarkersEnabled = true;
             this.gMapControl1.MaxZoom = 18;
             this.gMapControl1.MinZoom = 2;
@@ -101,54 +103,49 @@ namespace seeing_sismic_event
             this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(807, 479);
+            this.gMapControl1.Size = new System.Drawing.Size(605, 389);
             this.gMapControl1.TabIndex = 0;
             this.gMapControl1.Zoom = 13D;
             this.gMapControl1.Load += new System.EventHandler(this.gMapControl1_Load);
             // 
             // txtLatitude
             // 
-            this.txtLatitude.Location = new System.Drawing.Point(100, 174);
-            this.txtLatitude.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLatitude.Location = new System.Drawing.Point(75, 141);
             this.txtLatitude.Name = "txtLatitude";
-            this.txtLatitude.Size = new System.Drawing.Size(179, 22);
+            this.txtLatitude.Size = new System.Drawing.Size(135, 20);
             this.txtLatitude.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 174);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 141);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 17);
+            this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Latitude";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 219);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(12, 178);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 17);
+            this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Longitude";
             // 
             // txtLongitude
             // 
-            this.txtLongitude.Location = new System.Drawing.Point(101, 219);
-            this.txtLongitude.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLongitude.Location = new System.Drawing.Point(76, 178);
             this.txtLongitude.Name = "txtLongitude";
-            this.txtLongitude.Size = new System.Drawing.Size(179, 22);
+            this.txtLongitude.Size = new System.Drawing.Size(135, 20);
             this.txtLongitude.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 273);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(12, 222);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 17);
+            this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Type";
             // 
@@ -158,18 +155,16 @@ namespace seeing_sismic_event
             this.comboBox.Items.AddRange(new object[] {
             "Marker",
             "Polygon"});
-            this.comboBox.Location = new System.Drawing.Point(100, 273);
-            this.comboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox.Location = new System.Drawing.Point(75, 222);
             this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(179, 24);
+            this.comboBox.Size = new System.Drawing.Size(135, 21);
             this.comboBox.TabIndex = 6;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(19, 329);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd.Location = new System.Drawing.Point(14, 267);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 28);
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -177,10 +172,9 @@ namespace seeing_sismic_event
             // 
             // btnShow
             // 
-            this.btnShow.Location = new System.Drawing.Point(165, 329);
-            this.btnShow.Margin = new System.Windows.Forms.Padding(4);
+            this.btnShow.Location = new System.Drawing.Point(124, 267);
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(100, 28);
+            this.btnShow.Size = new System.Drawing.Size(75, 23);
             this.btnShow.TabIndex = 8;
             this.btnShow.Text = "Show";
             this.btnShow.UseVisualStyleBackColor = true;
@@ -188,10 +182,9 @@ namespace seeing_sismic_event
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(19, 112);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDelete.Location = new System.Drawing.Point(14, 91);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 28);
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -199,10 +192,10 @@ namespace seeing_sismic_event
             // 
             // searchDataBase
             // 
-            this.searchDataBase.Location = new System.Drawing.Point(19, 50);
-            this.searchDataBase.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchDataBase.Location = new System.Drawing.Point(14, 41);
+            this.searchDataBase.Margin = new System.Windows.Forms.Padding(2);
             this.searchDataBase.Name = "searchDataBase";
-            this.searchDataBase.Size = new System.Drawing.Size(260, 23);
+            this.searchDataBase.Size = new System.Drawing.Size(195, 19);
             this.searchDataBase.TabIndex = 10;
             this.searchDataBase.Text = "SearchDataBase";
             this.searchDataBase.UseVisualStyleBackColor = true;
@@ -219,12 +212,12 @@ namespace seeing_sismic_event
             this.Magnitud,
             this.Profundidad,
             this.Localidad});
-            this.table.Location = new System.Drawing.Point(319, 536);
-            this.table.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.table.Location = new System.Drawing.Point(239, 406);
+            this.table.Margin = new System.Windows.Forms.Padding(2);
             this.table.Name = "table";
             this.table.RowHeadersWidth = 51;
             this.table.RowTemplate.Height = 24;
-            this.table.Size = new System.Drawing.Size(807, 445);
+            this.table.Size = new System.Drawing.Size(605, 332);
             this.table.TabIndex = 11;
             // 
             // Fecha
@@ -278,13 +271,13 @@ namespace seeing_sismic_event
             // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(16, 399);
-            this.btnFilter.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFilter.Location = new System.Drawing.Point(9, 380);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(100, 28);
+            this.btnFilter.Size = new System.Drawing.Size(75, 23);
             this.btnFilter.TabIndex = 12;
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Visible = false;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // cbbFilter
@@ -295,96 +288,116 @@ namespace seeing_sismic_event
             "Magnitudes entre 4.5 y 5",
             "Magnitudes entre 5 y 6",
             "Magnitudes de 6 en adelante"});
-            this.cbbFilter.Location = new System.Drawing.Point(124, 399);
-            this.cbbFilter.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbFilter.Location = new System.Drawing.Point(90, 380);
             this.cbbFilter.Name = "cbbFilter";
-            this.cbbFilter.Size = new System.Drawing.Size(185, 24);
+            this.cbbFilter.Size = new System.Drawing.Size(140, 21);
             this.cbbFilter.TabIndex = 13;
+            this.cbbFilter.Visible = false;
             // 
             // btnFilterLocalidad
             // 
-            this.btnFilterLocalidad.Location = new System.Drawing.Point(192, 655);
+            this.btnFilterLocalidad.Location = new System.Drawing.Point(134, 449);
+            this.btnFilterLocalidad.Margin = new System.Windows.Forms.Padding(2);
             this.btnFilterLocalidad.Name = "btnFilterLocalidad";
-            this.btnFilterLocalidad.Size = new System.Drawing.Size(88, 23);
+            this.btnFilterLocalidad.Size = new System.Drawing.Size(66, 19);
             this.btnFilterLocalidad.TabIndex = 14;
             this.btnFilterLocalidad.Text = "Localidad";
             this.btnFilterLocalidad.UseVisualStyleBackColor = true;
+            this.btnFilterLocalidad.Visible = false;
             this.btnFilterLocalidad.Click += new System.EventHandler(this.btnFilterLocalidad_Click);
             // 
             // btnHoraF
             // 
-            this.btnHoraF.Location = new System.Drawing.Point(191, 734);
+            this.btnHoraF.Location = new System.Drawing.Point(134, 493);
+            this.btnHoraF.Margin = new System.Windows.Forms.Padding(2);
             this.btnHoraF.Name = "btnHoraF";
-            this.btnHoraF.Size = new System.Drawing.Size(88, 23);
+            this.btnHoraF.Size = new System.Drawing.Size(66, 19);
             this.btnHoraF.TabIndex = 15;
             this.btnHoraF.Text = "Hora";
             this.btnHoraF.UseVisualStyleBackColor = true;
+            this.btnHoraF.Visible = false;
             this.btnHoraF.Click += new System.EventHandler(this.btnHoraF_Click);
             // 
             // txtLocalidadF
             // 
-            this.txtLocalidadF.Location = new System.Drawing.Point(19, 655);
+            this.txtLocalidadF.Location = new System.Drawing.Point(8, 448);
+            this.txtLocalidadF.Margin = new System.Windows.Forms.Padding(2);
             this.txtLocalidadF.Name = "txtLocalidadF";
-            this.txtLocalidadF.Size = new System.Drawing.Size(120, 22);
+            this.txtLocalidadF.Size = new System.Drawing.Size(91, 20);
             this.txtLocalidadF.TabIndex = 16;
+            this.txtLocalidadF.Visible = false;
             // 
             // txtHoraF
             // 
-            this.txtHoraF.Location = new System.Drawing.Point(19, 734);
+            this.txtHoraF.Location = new System.Drawing.Point(8, 492);
+            this.txtHoraF.Margin = new System.Windows.Forms.Padding(2);
             this.txtHoraF.Name = "txtHoraF";
-            this.txtHoraF.Size = new System.Drawing.Size(120, 22);
+            this.txtHoraF.Size = new System.Drawing.Size(91, 20);
             this.txtHoraF.TabIndex = 17;
+            this.txtHoraF.Visible = false;
             // 
-            // Filters
+            // lblFilters
             // 
-            this.Filters.AutoSize = true;
-            this.Filters.Location = new System.Drawing.Point(126, 571);
-            this.Filters.Name = "Filters";
-            this.Filters.Size = new System.Drawing.Size(74, 17);
-            this.Filters.TabIndex = 18;
-            this.Filters.Text = "Filter table";
+            this.lblFilters.AutoSize = true;
+            this.lblFilters.Location = new System.Drawing.Point(69, 433);
+            this.lblFilters.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFilters.Name = "lblFilters";
+            this.lblFilters.Size = new System.Drawing.Size(55, 13);
+            this.lblFilters.TabIndex = 18;
+            this.lblFilters.Text = "Filter table";
+            this.lblFilters.Visible = false;
             // 
             // btnMagnitud
             // 
-            this.btnMagnitud.Location = new System.Drawing.Point(101, 916);
+            this.btnMagnitud.Location = new System.Drawing.Point(62, 592);
+            this.btnMagnitud.Margin = new System.Windows.Forms.Padding(2);
             this.btnMagnitud.Name = "btnMagnitud";
-            this.btnMagnitud.Size = new System.Drawing.Size(99, 23);
+            this.btnMagnitud.Size = new System.Drawing.Size(74, 19);
             this.btnMagnitud.TabIndex = 19;
             this.btnMagnitud.Text = "Magnitud";
             this.btnMagnitud.UseVisualStyleBackColor = true;
+            this.btnMagnitud.Visible = false;
             this.btnMagnitud.Click += new System.EventHandler(this.btnMagnitud_Click);
             // 
             // txtMagMin
             // 
-            this.txtMagMin.Location = new System.Drawing.Point(45, 863);
+            this.txtMagMin.Location = new System.Drawing.Point(20, 559);
+            this.txtMagMin.Margin = new System.Windows.Forms.Padding(2);
             this.txtMagMin.Name = "txtMagMin";
-            this.txtMagMin.Size = new System.Drawing.Size(71, 22);
+            this.txtMagMin.Size = new System.Drawing.Size(54, 20);
             this.txtMagMin.TabIndex = 20;
+            this.txtMagMin.Visible = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(58, 830);
+            this.label4.Location = new System.Drawing.Point(28, 532);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 17);
+            this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 21;
             this.label4.Text = "mag min";
+            this.label4.Visible = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(178, 830);
+            this.label5.Location = new System.Drawing.Point(138, 532);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 17);
+            this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 23;
             this.label5.Text = "mag max";
+            this.label5.Visible = false;
             // 
             // txtMagMax
             // 
-            this.txtMagMax.Location = new System.Drawing.Point(181, 863);
+            this.txtMagMax.Location = new System.Drawing.Point(134, 559);
+            this.txtMagMax.Margin = new System.Windows.Forms.Padding(2);
             this.txtMagMax.Name = "txtMagMax";
-            this.txtMagMax.Size = new System.Drawing.Size(71, 22);
+            this.txtMagMax.Size = new System.Drawing.Size(54, 20);
             this.txtMagMax.TabIndex = 22;
+            this.txtMagMax.Visible = false;
             // 
             // grfPuntos
             // 
@@ -392,14 +405,15 @@ namespace seeing_sismic_event
             this.grfPuntos.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.grfPuntos.Legends.Add(legend1);
-            this.grfPuntos.Location = new System.Drawing.Point(1153, 15);
+            this.grfPuntos.Location = new System.Drawing.Point(865, 12);
+            this.grfPuntos.Margin = new System.Windows.Forms.Padding(2);
             this.grfPuntos.Name = "grfPuntos";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "Sismos";
             this.grfPuntos.Series.Add(series1);
-            this.grfPuntos.Size = new System.Drawing.Size(519, 312);
+            this.grfPuntos.Size = new System.Drawing.Size(389, 254);
             this.grfPuntos.TabIndex = 24;
             this.grfPuntos.Text = "chart1";
             // 
@@ -409,13 +423,14 @@ namespace seeing_sismic_event
             this.grfBarras.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.grfBarras.Legends.Add(legend2);
-            this.grfBarras.Location = new System.Drawing.Point(1153, 345);
+            this.grfBarras.Location = new System.Drawing.Point(865, 280);
+            this.grfBarras.Margin = new System.Windows.Forms.Padding(2);
             this.grfBarras.Name = "grfBarras";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.grfBarras.Series.Add(series2);
-            this.grfBarras.Size = new System.Drawing.Size(519, 312);
+            this.grfBarras.Size = new System.Drawing.Size(389, 254);
             this.grfBarras.TabIndex = 25;
             this.grfBarras.Text = "chart2";
             // 
@@ -425,22 +440,57 @@ namespace seeing_sismic_event
             this.grfPastel.ChartAreas.Add(chartArea3);
             legend3.Name = "Legend1";
             this.grfPastel.Legends.Add(legend3);
-            this.grfPastel.Location = new System.Drawing.Point(1153, 669);
+            this.grfPastel.Location = new System.Drawing.Point(865, 544);
+            this.grfPastel.Margin = new System.Windows.Forms.Padding(2);
             this.grfPastel.Name = "grfPastel";
             series3.ChartArea = "ChartArea1";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series3.Legend = "Legend1";
             series3.Name = "Series2";
             this.grfPastel.Series.Add(series3);
-            this.grfPastel.Size = new System.Drawing.Size(519, 312);
+            this.grfPastel.Size = new System.Drawing.Size(389, 254);
             this.grfPastel.TabIndex = 26;
             this.grfPastel.Text = "chart3";
             // 
+            // cbbFilterOptions
+            // 
+            this.cbbFilterOptions.FormattingEnabled = true;
+            this.cbbFilterOptions.Items.AddRange(new object[] {
+            "Categorico",
+            "Cadena",
+            "Numerico"});
+            this.cbbFilterOptions.Location = new System.Drawing.Point(90, 330);
+            this.cbbFilterOptions.Name = "cbbFilterOptions";
+            this.cbbFilterOptions.Size = new System.Drawing.Size(140, 21);
+            this.cbbFilterOptions.TabIndex = 27;
+            // 
+            // btnFilterOptions
+            // 
+            this.btnFilterOptions.Location = new System.Drawing.Point(8, 330);
+            this.btnFilterOptions.Name = "btnFilterOptions";
+            this.btnFilterOptions.Size = new System.Drawing.Size(75, 23);
+            this.btnFilterOptions.TabIndex = 28;
+            this.btnFilterOptions.Text = "Go";
+            this.btnFilterOptions.UseVisualStyleBackColor = true;
+            this.btnFilterOptions.Click += new System.EventHandler(this.btnFilterOptions_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(39, 304);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(160, 13);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "seleccione un metodo de filtrado";
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1684, 993);
+            this.ClientSize = new System.Drawing.Size(1263, 749);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btnFilterOptions);
+            this.Controls.Add(this.cbbFilterOptions);
             this.Controls.Add(this.grfPastel);
             this.Controls.Add(this.grfBarras);
             this.Controls.Add(this.grfPuntos);
@@ -449,7 +499,7 @@ namespace seeing_sismic_event
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtMagMin);
             this.Controls.Add(this.btnMagnitud);
-            this.Controls.Add(this.Filters);
+            this.Controls.Add(this.lblFilters);
             this.Controls.Add(this.txtHoraF);
             this.Controls.Add(this.txtLocalidadF);
             this.Controls.Add(this.btnHoraF);
@@ -468,9 +518,8 @@ namespace seeing_sismic_event
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtLatitude);
             this.Controls.Add(this.gMapControl1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Sismic Event";
             ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grfPuntos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grfBarras)).EndInit();
@@ -507,7 +556,7 @@ namespace seeing_sismic_event
         private System.Windows.Forms.Button btnHoraF;
         private System.Windows.Forms.TextBox txtLocalidadF;
         private System.Windows.Forms.TextBox txtHoraF;
-        private System.Windows.Forms.Label Filters;
+        private System.Windows.Forms.Label lblFilters;
         private System.Windows.Forms.Button btnMagnitud;
         private System.Windows.Forms.TextBox txtMagMin;
         private System.Windows.Forms.Label label4;
@@ -516,6 +565,9 @@ namespace seeing_sismic_event
         private System.Windows.Forms.DataVisualization.Charting.Chart grfPuntos;
         private System.Windows.Forms.DataVisualization.Charting.Chart grfBarras;
         private System.Windows.Forms.DataVisualization.Charting.Chart grfPastel;
+        private System.Windows.Forms.ComboBox cbbFilterOptions;
+        private System.Windows.Forms.Button btnFilterOptions;
+        private System.Windows.Forms.Label label6;
     }
 }
 
